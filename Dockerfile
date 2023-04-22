@@ -1,4 +1,7 @@
-FROM ubuntu:22.04
+FROM ubuntu:23.04
+
+ENV DEBIAN_FRONTEND noninteractive
+ENV DEBCONF_NOWARNINGS="yes"
 
 RUN apt-get update; apt-get -y upgrade; apt-get clean
 RUN DEBIAN_FRONTEND=noninteractive TZ=Singapore apt-get -y install tzdata
